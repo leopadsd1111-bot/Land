@@ -141,6 +141,23 @@
       animation: floatCard 4s ease-in-out infinite;
     }
 
+    .hero-visual {
+      margin-top: 28px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+    }
+
+    .hero-visual img,,
+    .review-avatar,
+    .faq-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
     .hero-list {
       list-style: none;
     }
@@ -187,7 +204,8 @@
 
     .card,
     .review,
-    .form-box {
+    .form-box,
+    .faq-item {
       background: rgba(255,255,255,0.06);
       padding: 28px;
       border-radius: 18px;
@@ -199,9 +217,23 @@
 
     .card:hover,
     .review:hover,
-    .form-box:hover {
+    .form-box:hover,
+    .faq-item:hover {
       transform: translateY(-8px);
       box-shadow: 0 18px 45px rgba(0,0,0,0.42);
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.22), rgba(21,128,61,0.10));
+      border: 1px solid rgba(74,222,128,0.18);
     }
 
     .card h3 {
@@ -256,6 +288,14 @@
       gap: 24px;
     }
 
+    .review-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      border: 2px solid rgba(255,255,255,0.18);
+    }
+
     .review-text {
       font-size: 16px;
       color: #e5e7eb;
@@ -270,6 +310,37 @@
     .review-role {
       font-size: 14px;
       color: #d1d5db;
+    }
+
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .faq-image {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.10);
+      min-height: 100%;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-item h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .faq-item p {
+      color: #d1d5db;
+      font-size: 15px;
     }
 
     .form-section {
@@ -466,7 +537,8 @@
       .form-wrap,
       .services-grid,
       .stats-grid,
-      .reviews-grid {
+      .reviews-grid,
+      .faq-wrap {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -485,7 +557,8 @@
       .form-wrap,
       .services-grid,
       .stats-grid,
-      .reviews-grid {
+      .reviews-grid,
+      .faq-wrap {
         grid-template-columns: 1fr;
       }
 
@@ -542,6 +615,9 @@
         <h1>Привожу клиентов из Google, Facebook, Instagram и TikTok</h1>
         <p>Настраиваю рекламу под ваш бизнес так, чтобы вы получали не просто клики, а реальные заявки, продажи и рост прибыли. Работаю с аналитикой, креативами и воронкой, чтобы реклама окупалась.</p>
         <a href="#contact" class="btn">Получить консультацию</a>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Аналитика и рост рекламных кампаний" />
+        </div>
       </div>
       <div class="hero-card">
         <h3 style="margin-bottom: 18px; font-size: 24px;">Что вы получите</h3>
@@ -562,18 +638,22 @@
       <p class="section-subtitle">Помогаю бизнесу запускать и масштабировать рекламу на самых эффективных платформах. Подбираю каналы и стратегию под вашу нишу и цели.</p>
       <div class="services-grid">
         <div class="card">
+          <div class="card-icon">🔍</div>
           <h3>Google Ads</h3>
           <p>Поисковая, контекстно-медийная, YouTube-реклама и ремаркетинг для быстрого привлечения целевых клиентов.</p>
         </div>
         <div class="card">
+          <div class="card-icon">📘</div>
           <h3>Facebook Ads</h3>
           <p>Запуск и оптимизация кампаний для лидогенерации, продаж и узнаваемости бренда через Facebook.</p>
         </div>
         <div class="card">
+          <div class="card-icon">📸</div>
           <h3>Instagram Ads</h3>
           <p>Продвижение товаров и услуг через ленту, stories, reels и ретаргетинг для роста заявок и продаж.</p>
         </div>
         <div class="card">
+          <div class="card-icon">🎵</div>
           <h3>TikTok Ads</h3>
           <p>Настройка рекламы в TikTok для охвата, трафика и заявок с использованием современных креативных форматов.</p>
         </div>
@@ -587,20 +667,60 @@
       <p class="section-subtitle">Не просто запускаю рекламу, а выстраиваю систему привлечения клиентов, где каждый бюджет работает на результат.</p>
       <div class="services-grid">
         <div class="card">
+          <div class="card-icon">📊</div>
           <h3>Глубокий анализ ниши</h3>
           <p>Перед запуском изучаю ваш рынок, конкурентов, аудиторию и точки роста, чтобы не сливать бюджет на тесты вслепую.</p>
         </div>
         <div class="card">
+          <div class="card-icon">🎯</div>
           <h3>Фокус на заявки и продажи</h3>
           <p>Главная цель — не красивые отчёты, а реальные лиды, звонки, сообщения и продажи для вашего бизнеса.</p>
         </div>
         <div class="card">
+          <div class="card-icon">⚙️</div>
           <h3>Постоянная оптимизация</h3>
           <p>Регулярно анализирую показатели, отключаю слабые связки и усиливаю то, что даёт лучший результат.</p>
         </div>
         <div class="card">
+          <div class="card-icon">📈</div>
           <h3>Прозрачная отчётность</h3>
           <p>Вы всегда понимаете, куда идет бюджет, какие результаты получены и что нужно улучшить дальше.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Как проходит работа</h2>
+      <p class="section-subtitle">Пошаговый процесс, который помогает быстро запустить рекламу, найти рабочие связки и масштабировать результат.</p>
+      <div class="services-grid">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>1. Аудит</h3>
+          <p>Изучаю ваш продукт, сайт, текущую рекламу, целевую аудиторию и выявляю слабые места в воронке.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🗺️</div>
+          <h3>2. Стратегия</h3>
+          <p>Подбираю рекламные площадки, офферы, сегменты аудитории и формирую понятный план запуска.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h3>3. Запуск</h3>
+          <p>Создаю кампании, настраиваю аналитику, пиксели, цели и запускаю рекламу с корректной структурой.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📉</div>
+          <h3>4. Оптимизация</h3>
+          <p>Анализирую результаты, тестирую гипотезы, улучшаю объявления и снижаю стоимость заявок.</p>
+        </div>
+      </div>
+      <div class="services-grid" style="margin-top: 24px; grid-template-columns: repeat(1, 1fr); max-width: 588px; margin-left: auto; margin-right: auto;">
+        <div class="card" style="text-align:center;">
+          <div class="card-icon" style="margin-left:auto; margin-right:auto;">🌍</div>
+          <h3>5. Масштабирование</h3>
+          <p>После нахождения прибыльных связок увеличиваю объем рекламы без потери качества лидов и окупаемости.</p>
         </div>
       </div>
     </div>
@@ -637,19 +757,52 @@
       <p class="section-subtitle">Вот что говорят предприниматели и компании, которые уже запустили рекламу со мной.</p>
       <div class="reviews-grid">
         <div class="review">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Анна Коваль" />
           <p class="review-text">«Уже в первый месяц получили стабильный поток заявок. Стоимость лида снизилась почти на 40%, а продажи выросли заметно быстрее, чем ожидали.»</p>
           <div class="review-author">Анна Коваль</div>
           <div class="review-role">Владелец интернет-магазина</div>
         </div>
         <div class="review">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Игорь Мельник" />
           <p class="review-text">«Очень понравился системный подход: аудит, понятная стратегия и прозрачная отчётность. Реклама в Facebook и Instagram наконец-то начала приносить прибыль.»</p>
           <div class="review-author">Игорь Мельник</div>
           <div class="review-role">CEO образовательного проекта</div>
         </div>
         <div class="review">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Марина Сокол" />
           <p class="review-text">«Запустили TikTok Ads для нового продукта и получили отличную вовлечённость и продажи. Работа быстро окупилась, будем масштабировать дальше.»</p>
           <div class="review-author">Марина Сокол</div>
           <div class="review-role">Маркетолог бренда косметики</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Частые вопросы</h2>
+      <p class="section-subtitle">Собрал ответы на самые частые вопросы, которые задают перед запуском рекламы.</p>
+      <div class="faq-wrap">
+        <div class="faq-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Маркетинговая команда обсуждает стратегию" />
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Какой бюджет нужен на старт?</h3>
+            <p>Стартовый бюджет зависит от ниши, региона и целей, но обычно рекомендую начинать с суммы, которой хватает на тест нескольких аудиторий и креативов.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Когда появятся первые заявки?</h3>
+            <p>Первые обращения могут прийти уже в первые дни после запуска, но для стабильного результата обычно нужен этап тестирования и оптимизации.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Вы работаете с любыми нишами?</h3>
+            <p>Работаю с большинством ниш, где можно выстроить понятную воронку и оценить эффективность рекламы по цифрам и заявкам.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Можно ли подключить аналитику и отчёты?</h3>
+            <p>Да, настраиваю аналитику, цели, пиксели, события и прозрачную систему отчётности, чтобы вы видели реальную эффективность рекламы.</p>
+          </div>
         </div>
       </div>
     </div>
